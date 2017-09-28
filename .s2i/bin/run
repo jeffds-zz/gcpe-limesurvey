@@ -1,0 +1,8 @@
+#!/bin/bash
+# courtesy of https://docs.openshift.com/container-platform/3.5/using_images/s2i_images/customizing_s2i_images.html
+# note: the use of exec prevents us from running our commands after it
+
+echo "Before running application"
+
+echo "Running the php s2i builder image run script"
+exec /usr/libexec/s2i/run

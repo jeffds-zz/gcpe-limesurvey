@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "pre-assemble"
+
+# this is the location of the s2i assemble script for the php 7 s2i builder image
+# courtesy of https://docs.openshift.com/container-platform/3.5/using_images/s2i_images/customizing_s2i_images.html
+/usr/libexec/s2i/assemble
+rc=$?
+
+if [ $rc -eq 0 ]; then
+    echo "After successful assembling"
+else
+    echo "After failed assembling"
+fi
+
+exit $rc
+
+# now let's do our stuff
+echo "custom assemble"
