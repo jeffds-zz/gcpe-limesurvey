@@ -1,0 +1,3 @@
+[submodule "public/feedback"]
+	path = public/feedback
+	url = https://github.com/LimeSurvey/LimeSurvey.git
