@@ -2,7 +2,14 @@
 # courtesy of https://docs.openshift.com/container-platform/3.5/using_images/s2i_images/customizing_s2i_images.html
 # note: the use of exec prevents us from running our commands after it
 
-echo "Before running application"
+# check for config.php and if missing copy it in from openshift/config
+if [ -e ${LIMESURVEY_CONFIG_PATH}config.php ]
+then
+	echo "config.php already exists, no need to copy"
+else
+	echo "Copying config.php into LimeSurvey config folder..."
+	cp $HOME/openshift/config/config.php ${LIMESURVEY_CONFIG_PATH}config.php
+fi
 
 echo "Running the php s2i builder image run script"
 exec /usr/libexec/s2i/run
