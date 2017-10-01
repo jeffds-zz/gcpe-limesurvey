@@ -1,3 +1,3 @@
 <?php
-	header( 'Location: /limesurvey' ) ;
+	header( 'Location: /feedback' ) ;
 ?>
