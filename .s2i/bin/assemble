@@ -13,6 +13,3 @@ else
 fi
 
 exit $rc
-
-# now let's do our stuff
-echo "custom assemble"
